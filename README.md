@@ -27,6 +27,7 @@ Before getting, I ensured that the following requirements are installed:
 ```shell
 git clone https://github.com/sandeepmargana/sticky-notes.git
 cd sticky-notes
+sudo chmod 777 run.sh
 ./run.sh
 ```
 
