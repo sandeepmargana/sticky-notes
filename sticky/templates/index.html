@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="shortcut icon" href="{% static 'icons/logo.png' %}">
+    <title>NotesWall</title>
+</head>
+<body>
+    <nav class="navbar ">
+        <h4 class="m-1"><img src="{% static 'icons/logo.png' %}" class="icon">NotesWall</h4>
+    </nav>
+    
+    <div class="header">
+       <div class="content">
+
+            <div class="note-input">
+                <form method = "post" action="add"> 
+                    {%csrf_token%}
+                <textarea class="input-text m-1 get-note" name = "note_txt" rows="6" placeholder="// Write a note here"></textarea>
+                    <div class="action m-2">
+                        
+                            <input type="color" name = "color"  value="#ccffcc"  class="theme m-1 get-color">
+                            <button class=" btn m-2 " id="add-btn">Add note</button>
+                        
+                        
+                    </div>
+                </form>
+            </div>
+       </div> 
+    </div>
+
+    <div class="notes-list mt-3">
+        {% for note in nts %}
+            <div class="note" style="background-color: {{ note.color }};">
+                <div class="note-view">
+                {{note.note_txt}}
+                </div>
+                    <div>
+                        <div class="btn-group "  role="group" aria-label="Basic example">
+                            <form method = "post" action="del"> 
+                                {%csrf_token%}
+                                <input type="hidden" name="note_id" value="{{note.id}}">
+                                <button type="submit" class="btn btn-secondary" style="background-color: #f2f2f2;"><img src="{% static 'icons/bin.png'%}" class="bin-icon"></button>
+                            </form>
+
+                            <form method = "post" action="edit"> 
+                                {%csrf_token%}
+                                <input type="hidden" name="note_id" value="{{note.id}}">
+                                <button type="submit" class="btn btn-secondary" style="background-color: #f2f2f2;"><img src="{% static 'icons/pencil.png'%}" class="bin-icon"></button>
+                            </form>
+
+                            <form method = "post" action="expand"> 
+                                {%csrf_token%}
+                                <input type="hidden" name="note_id" value="{{note.id}}">
+                                <button type="submit" class="btn btn-secondary" style="background-color: #f2f2f2;"><img src="{% static 'icons/eye.png'%}" class="bin-icon"></button>
+                            </form>    
+                        </div>
+                    </div>
+            </div>
+        {%endfor%}
+    </div>
+
+    <footer class="bottom">Made with &#10084; By <a href="https://in.linkedin.com/in/lsv-sandeep-margana">Sandeep Venkata</a></footer>
+
+</body>
+<!-- <script src="{% static 'app.js' %}"></script> -->
+</html>
