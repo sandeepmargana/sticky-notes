@@ -10,4 +10,4 @@ python3 manage.py createsuperuser
 admin
 1234
 python3 manage.py runserver
-
+xdg-open http://127.0.0.1:8000/home
