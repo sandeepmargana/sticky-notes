@@ -25,21 +25,12 @@ Before getting, I ensured that the following requirements are installed:
 
 ### Running this project
 ```shell
-    git clone https://github.com/sandeepmargana/sticky-notes.git
-```
-
-```shell
-    cd sticky-notes
-```
-
-
-```shell
-    ./run.sh
+git clone https://github.com/sandeepmargana/sticky-notes.git
+cd sticky-notes
+./run.sh
 ```
 
 
-```shell
-```
 ### Installation and Flow
 
 1. Clone the repository:
