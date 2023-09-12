@@ -4,7 +4,7 @@ from django.urls import path
 from notes.views import home ,addNote , delNote , editNote ,expandNote , saveNote                       
 
 urlpatterns = [
-    path('', view= home , name = "home"),
+    path('home', view= home , name = "home"),
     path('add', view= addNote  , name = "add"),
 
     path('del', view= delNote  , name = "delNote"),

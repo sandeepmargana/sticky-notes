@@ -55,7 +55,7 @@ function displayNotes(notes) {
         </div>
         `;
 
-        notesList.insertAdjacentHTML('afterbegin', noteHTML);
+        notesList.insertAdjacentHTML('afterbegin', notSeHTML);
         
         const deleteBtn = document.querySelector('.deleteBtn');
         deleteBtn.addEventListener('click', e => { deleteNote(e,element);})

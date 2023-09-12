@@ -22,6 +22,24 @@ Before getting, I ensured that the following requirements are installed:
 - PostgreSQL
 - Django
 
+
+### Running this project
+```shell
+    git clone https://github.com/sandeepmargana/sticky-notes.git
+```
+
+```shell
+    cd sticky-notes
+```
+
+
+```shell
+    ./run.sh
+```
+
+
+```shell
+```
 ### Installation and Flow
 
 1. Clone the repository:
@@ -38,6 +56,7 @@ First I cloned the frontend part from the following [link](https://github.com/ru
 Installed the virtual env and activated it
 ```shell
     $ sudo apt install python3-venv
+    $ python3 -m venv venv
     $ source venv/bin/activate
 ```
 4. Starting the project
